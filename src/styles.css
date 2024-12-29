@@ -37,14 +37,15 @@
 
 .wrapper {
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 360px 2fr 1fr;
   /* padding: 0px 2px; */
   /* overflow: hidden; */
   /* max-width: 800px; */
 }
 
-html {
+html, body {
   /* overflow-y: hidden; */
+  width: 100%;
 }
 
 header {
@@ -61,7 +62,7 @@ header {
 .header-background-design {
   position: absolute;
   z-index: -1;
-  min-width: 100vw;
+  min-width: 100%;
   /* overflow: hidden; */
   min-height: 100%;
   background-color: rgb(9,145,179);
@@ -91,7 +92,10 @@ header {
   min-width: max(250px, min(300px, calc(100vw - 400px)));
   min-height: 300px;
   box-shadow: 5px 5px 9px -4px #000000ae;
-  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* position: relative; */
   /* float: left; */
 } 
 
@@ -99,9 +103,9 @@ header {
   font-size: 3rem;
   font-family: "Playfair Display", Helvetica, sans-serif;
   color: white;
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
-  right: 5px;
+  right: 5px; */
   letter-spacing: 1px;
 }
 
@@ -165,6 +169,70 @@ header {
 .icon:first-child {
   max-height: 24px;
   max-width: 24px;
+}
+
+
+.main-body {
+  display: grid;
+  grid-template-rows: 30px 1fr;
+  font-size: 1rem;
+  /* position: absolute; */
+  /* left: 50%; */
+  /* min-width: min(900px, 100vw); */
+  padding: 20px;
+  padding-left: 320px;
+  padding-right: 200px;
+}
+
+.main-body .main-body-title {
+  font-size: 1.6rem;
+  font-family: "Playfair Display", Helvetica, sans-serif;
+}
+
+.main-body .main-body-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+  column-gap: 60px;
+  row-gap: 30px;
+  padding: 20px 0px;
+}
+
+.card {
+  /* border: 1px solid black; */
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 4px 4px 13px -4px #999999;
+}
+
+.card-image {
+  min-height: 200px;
+  background-color: #9E1D1D;
+}
+
+.card-title-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 5px;
+}
+
+.card-title {
+  font-family: "Playfair Display", Helvetica, sans-serif;
+  font-size: 19px;
+}
+
+#card-icons {
+  width: auto;
+  /* border: 1px solid black; */
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.card-content {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 10px;
+  padding: 0px 5px;
 }
 
 
