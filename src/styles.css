@@ -173,29 +173,44 @@ header {
 
 
 .main-body {
-  display: grid;
-  grid-template-rows: 30px 1fr;
+  /* display: grid; */
+  /* grid-template-rows: 30px 1fr; */
+  /* grid-template-columns: 900px; */
+  display: flex;
+  flex-direction: column;
+  /* max-width: 900px; */
   font-size: 1rem;
+  align-items: center;
   /* position: absolute; */
   /* left: 50%; */
   /* min-width: min(900px, 100vw); */
-  padding: 20px;
+  /* padding: 20px;
   padding-left: 320px;
-  padding-right: 200px;
+  padding-right: 200px; */
 }
 
-.main-body .main-body-title {
+.main-body-title {
   font-size: 1.6rem;
   font-family: "Playfair Display", Helvetica, sans-serif;
 }
 
-.main-body .main-body-cards {
+.main-body-cards-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-body-cards {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
   column-gap: 60px;
   row-gap: 30px;
-  padding: 20px 0px;
+  max-width: 900px;
+  /* padding: 20px 0px; */
 }
+
+
 
 .card {
   /* border: 1px solid black; */
