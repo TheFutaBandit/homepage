@@ -9,6 +9,7 @@
   body {
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
+    /* background-color: #98B0D4; */
   }
   
   img, picture, video, canvas, svg {
@@ -76,7 +77,8 @@ header {
   
   /* overflow: hidden; */
   min-height: 360px;
-  background-color: rgb(9,145,179);
+  /* background-color: rgb(9,145,179); */
+  background-color: #E09A41;
   transform: rotate(-6deg) scaleX(4) scaleY(1.3);
   transform-origin: bottom left;
   box-shadow: 0px 5px 7px -1px #CECECE;
@@ -89,63 +91,137 @@ header {
   align-items: center;
   justify-content: center;
   margin-top: 40px;
+  position: relative;
+}
+
+
+
+
+.header-profile-image, .header-content-image {
+  background-image: url(images/daft_punk.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* min-width: max(250px, min(300px, calc(100vw - 400px))); */
+  min-width: 300px;
+  min-height: 300px;
+  box-shadow: 5px 5px 9px -4px #000000ae;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+} 
+
+.header-content-image {
+  display: none;
+}
+
+
+
+.profile-title {
+  font-size: 3rem;
+  font-family: "Playfair Display", Helvetica, sans-serif;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.header-profile-content {
+  background-color: white;
+  min-height: min-content;
+  box-shadow: 0px 5px 7px -1px #989797ae;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+  padding: 20px 20px 20px 20px;
+  justify-content: space-between;
+}
+
+
+
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  /* .header-container {
+    display: block;
+  } */
+
+  .header-profile-image {
+    /* position: absolute;
+    float: left; */
+    display: none;
+  }
+
+  .header-profile-content {
+    display: block;
+  }
+
+  .header-content-image {
+    /* position: absolute; */
+    position: relative;
+    /* top: -10px; */
+    /* left: -10px; */
+    display: flex;
+    float:left;
+    max-height: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+    margin: 1px;
+    transform-origin: bottom right;
+    transform: scale(2);
+  }
+
+  .profile-body {
+    display: block;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+  }
+
+  header {
+    margin: 50px 30px 0px 50px;
+  }
 }
 
 @media (max-width : 560px) {
   .header-container {
     flex-direction: column;
   }
-}
 
+   /* .header-container {
+    display: block;
+  } */
 
-.header-profile-image {
-  background-image: url(images/daft_punk.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-width: max(250px, min(300px, calc(100vw - 400px)));
-  min-height: 300px;
-  box-shadow: 5px 5px 9px -4px #000000ae;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  /* position: relative; */
-  /* float: left; */
-} 
+  .header-profile-image {
+    /* position: absolute;
+    float: left; */
+    display: flex;
+  }
 
-.header-profile-image .profile-title {
-  font-size: 3rem;
-  font-family: "Playfair Display", Helvetica, sans-serif;
-  color: white;
-  /* position: absolute;
-  bottom: 0;
-  right: 5px; */
-  letter-spacing: 1px;
-}
+  .header-profile-content {
+    display: flex;
+  }
 
-.header-profile-content {
-  background-color: white;
-  /* box-sizing: border-box; */
-  /* width: 400px; */
-  min-height: min-content;
-  box-shadow: 0px 5px 7px -1px #989797ae;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  /* justify-content: center; */
-  font-size: 1rem;
-  padding: 20px 20px 20px 20px;
-  /* flex-wrap: wrap; */
-  justify-content: space-between;
-  /* z-index: 1; */
-}
+  .header-content-image {
+    display: none;
+  }
 
-.profile-body {
-  /* border: 1px solid black; */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  /* flex-wrap: wrap; */
+  .profile-body {
+    display: flex;
+  }
+
+  .profile-title {
+    font-size: 3rem;
+  }
+
+  .header {
+    margin: 0px;
+  }
 }
 
 .content-title {
@@ -160,10 +236,7 @@ header {
 }
 
 #profile-icon {
-  /* align-self: flex-start; */
-  /* border: 1px solid black; */
   min-height: 25px;
-  /* margin-top: 10px; */
 }
 
 .icon-container {
@@ -171,8 +244,6 @@ header {
   gap: 8px;
   justify-content: flex-end;
   align-items: center;
-  /* justify-self: flex-end; */
-  /* align-self: flex-end; */
 }
 
 .icon {
@@ -190,15 +261,26 @@ header {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  /* justify-content: center; */
-  align-items: center;
-  padding: 0 50px;
-  max-width: 100%;
+  /* align-items: center; */
+  padding: 10px 50px;
+  max-width: fit-content;
+  row-gap: 5px;
+  align-self: center;
+}
+
+@media (max-width: 1000px) {
+  .main-body {
+    max-width: 100%;
+    align-self: normal;
+  }
 }
 
 .main-body-title {
   font-size: 1.6rem;
   font-family: "Playfair Display", Helvetica, sans-serif;
+  /* align-self:  center; */
+  /* width: 1020px; */
+  /* min-width: 300px; */
 }
 
 .main-body-cards {
@@ -224,6 +306,13 @@ header {
 .card-image {
   min-height: 200px;
   background-color: #9E1D1D;
+}
+
+#get-lucky {
+  background-image: url(images/Get_Lucky.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card-title-bar {
